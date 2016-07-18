@@ -1,0 +1,97 @@
+<div class="sugg-single-header">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-calendar-o"></i> {{sugg.submissiondate}}
+                </div>
+                <div class="col-md-6 center">
+                    Submitted by <span style="sugg-single-submittedby">{{sugg.name}}</span>
+                </div>
+                <div class="col-md-3 right">
+                    <strong>{{sugg.votes}}</strong> votes
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sugg-single stickyFooterDependancy">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="sugg-single-title">
+                    <h1>{{sugg.title}}</h1>
+                </div>
+                <div class="sugg-single-menu">
+                    <button class="btn btn-default btn-sm" ng-click="edit()">
+                        <i class="fa fa-pencil"></i> Edit
+                    </button>
+                    <a class="btn btn-danger btn-sm" href="#">
+                        <i class="fa fa-trash"></i> Delete
+                    </a>
+                </div>
+                
+                <div ng-hide="editView" class="sugg-single-body">
+                    <p ng-bind-html="sugg.summary"></p>
+                </div>
+                <div ng-show="editView" class="sugg-single-body">
+                    <summernote ng-show="editView" ng-model="sugg.summary" config="summernoteOptions"></summernote>
+                    <div class="right">
+                        <button class="btn btn-default" ng-click="cancelEdit()">Cancel</button>
+                        <button class="btn btn-info">Save</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default sugg-single-details">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Details</h3>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td>ID:</td>
+                            <td>{{sugg.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Status:</td>
+                            <td>{{sugg.statusName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Votes:</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>From:</td>
+                            <td>Fhad Sheikh</td>
+                        </tr>
+                        <tr>
+                            <td>School:</td>
+                            <td>TechnoPro Computer Solutions Inc.</td>
+                        </tr>
+                        <tr>
+                            <td>Date:</td>
+                            <td>6/22/2016 4:20 PM</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="center">
+                    <div ng-show="sugg.status == 0">
+                                <button class="btn btn-default btn-block btn-lg moderate-btn-success" ng-click="status(1)">Accept</button>
+                                <button class="btn btn-default btn-block btn-lg moderate-btn-danger" ng-click="status(2)">Reject</button>
+                    </div>
+                    <div ng-show="sugg.status == 1">
+                        <div class="alert alert-info" role="alert">This suggestion is approved</div>
+                        <button class="btn btn-danger btn-block btn-lg" ng-click="status(2)"><i class="fa fa-thumbs-down"></i> Deny</button>
+                    </div>
+                    <div ng-show="sugg.status == 2">
+                        <div class="alert alert-danger" role="alert">This suggestion is denied</div>
+                        <button class="btn btn-info btn-block btn-lg" ng-click="status(1)"><i class="fa fa-thumbs-up"></i> Approve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<messages ng-show="messages"></messages>

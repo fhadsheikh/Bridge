@@ -1,0 +1,47 @@
+<div>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="logo"><a ng-href="suggestions"><img src="http://clockworks.ca/images/clockworklogo3.png" height="80" alt="ClockWork Logo"></a></div>
+                </div>
+                <div class="col-md-6">
+                    <ul class="user-menu">
+                        <li>
+                            <div class="dropdown" data-toggle="dropdown" style="width:150px; text-align:right; display:inline">
+                                <a href="" data-toggle="dropdown" class="dropdown-toggle">{{main.user.name}} <i class="fa fa-caret-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a ng-click="">My Profile</a></li>
+                                    <li><a ng-click="main.logout()">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a ui-sref="new-suggestion"><i class="fa fa-plus"></i></a></li>
+                        <li ng-show='main.isAdmin'><a ng-href="moderate"><i class="fa fa-check-square-o"></i></a></li>
+                        <li ng-show='main.isAdmin'><a ng-href="admin"><i class="fa fa-cog"></i></a></li>
+                        <span class="badge">{{main.credits}} credits</span> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--
+    <div class="subheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav navbar-nav">
+                        <li ng-repeat="headerItem in headerItems">
+                            <a ng-href="{{headerItem.link}}" ng-click="select(headerItem)" ng-show="headerItem.permission == true">
+                                <i class="fa fa-{{headerItem.icon}}"></i>
+                                <br>
+                                {{headerItem.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+</div>

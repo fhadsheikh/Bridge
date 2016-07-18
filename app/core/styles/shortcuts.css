@@ -1,0 +1,19 @@
+/* line 1, shortcuts.scss */
+.right {
+  text-align: right;
+}
+
+/* line 5, shortcuts.scss */
+.center {
+  text-align: center;
+}
+
+/* line 9, shortcuts.scss */
+.left {
+  float: left;
+}
+
+/* line 13, shortcuts.scss */
+.blue {
+  color: #0FA7DB;
+}

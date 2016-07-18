@@ -1,0 +1,37 @@
+<search-bar search="search"></search-bar>
+
+<div class="sugg-menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">Suggestions <span class="badge">{{count}} </span></div>
+            <div class="col-md-6 center">
+                Sort by:
+                <a class="btn btn-sm btn-default" ng-click="sortPopular('-votes')" ng-class="sortClass('votes')">
+                    Popular
+                </a>
+                <a class="btn btn-sm btn-default" ng-click="sortPopular('title')" ng-class="sortClass('title')">
+                    Name
+                </a>
+                <a class="btn btn-sm btn-default" ng-click="sortPopular('-submissiondate')" ng-class="sortClass('submissiondate')">
+                    Newest
+                </a>
+            </div>
+            <div class="col-md-3 right">
+                Filter:
+                <a class="btn btn-sm btn-default" ng-click="viewAllSuggestions()" ng-class="filterClass('All Suggestions')">All Suggestions</a>
+                
+                <a class="btn btn-sm btn-default" ng-click="viewMySuggestions()" ng-class="filterClass('My Suggestions')">My Suggestions</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sugg-list stickyFooterDependancy">
+    <div class="container" infinite-scroll='loadMore()' infinite-scroll-disabled='loadBusy' infinite-scroll-distance='1'>
+        <div class="sugg-suggestion" ng-repeat="suggestion in suggestions | toArray | orderBy: order | filter:search.filter">
+            <search-card></search-card>
+        </div>
+        <h2 ng-show="loadBusy">Loading more...</h2>
+    </div>
+</div>

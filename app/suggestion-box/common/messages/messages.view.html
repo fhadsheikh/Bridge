@@ -1,0 +1,35 @@
+<div class="messages">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="messagebox">
+                    <textarea ng-model="newMessage" rows="3" placeholder="Enter your message here" class="form-control"></textarea>
+                    <button ng-click="submitMessage()" class="btn btn-info btn-sm right">Send Message</button>
+                </div>
+                <div>
+                    <ul class="messages-list">
+                        <li ng-repeat="message in messages | orderBy: '-date'">
+                            <div class="row">
+                                <div class="col-md-6 left">
+                                    <span style="display:inline-block">
+                                        <strong>{{message.whoCreated.firstname}} {{message.whoCreated.lastname}}</strong><br>
+                                        {{message.jobtitle}}
+                                    </span>
+                                    <span style="width:36px; float:left; margin-right:10px;">
+                                        <img class="img-thumbnail" width="36px" ng-src="https://secure.gravatar.com/avatar/24bc116d18e54c622fffdd15a7380029?s=64&d=mm">
+                                    </span>
+                                </div>
+                                <div class="col-md-6 right messagedate"><br><i class="fa fa-clock-o"></i> {{message.dateCreated | timeago}}</div>
+                            </div>
+                            <div class="row message">
+                                <div class="col-md-12">
+                                    <p>{{message.messageText}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>

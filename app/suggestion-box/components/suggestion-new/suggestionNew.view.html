@@ -1,0 +1,72 @@
+<div class="sugg-single-header">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 center">
+                    <h1>New Suggestion</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sugg-single stickyFooterDependancy" ng-show="wizard.message">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>Suggestion Submitted</h3>
+                <p>Thank you for submitting your suggestion. A TechnoPro technician will review your submission. You will receive an email when the status of suggestion changes.</p>
+            </div>
+        </div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="sugg-single stickyFooterDependancy" ng-show="wizard.form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <form>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" ng-model="newsuggestion.title" class="form-control" id="title" placeholder="">
+                    </div>
+<!--
+                    <div class="form-group">
+                        <label for="summary">Summary</label>
+                        <textarea ng-model="newsuggestion.summary" class="form-control" rows="6"></textarea>
+                    </div>
+-->
+                    <div class="form-group">
+                        <label for="summary">Summary</label>
+                        <summernote ng-model="newsuggestion.summary" config="summernoteOptions"></summernote>
+                    </div>
+                    
+                    <button class="btn btn-lg btn-info btn-block" ng-click="endSubmission()">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="sugg-single stickyFooterDependancy" ng-show="wizard.rules">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>Welcome to ClockWork's suggestion box.</h3>
+                <p>This is the best way to let us know of features
+                that you would like to see added into ClockWork. Once approved, your suggestion will be displayed to ClockWork users like yourself for voting. Suggestions with the highest amount of likes will be reviewed further by TechnoPro and have a chance to be added into ClockWork.</p>
+                <h3>Guidelines</h3>
+                <p>When submitting a suggestion, be sure to be as descriptive as possible. Explain why you think this suggestion should be added to ClockWork and how you think other users of ClockWork can benefit.</p>
+                <p>All suggestions are screened for harmful and offensive content. We are looking for positive suggestions that can make ClockWork easier to use and more feature rich. If you are having trouble with ClockWork, please submit a support ticket instead.</p>
+                <p>Before submitting, it's important to understand that there is no guarantee that your suggestion will be added into ClockWork. The voting process simply helps us understand the needs of our clients and is taken into consideration when planning new versions.</p>
+                <h3>Suggestion Process</h3>
+                <p>Once your suggestion has been submitted, a TechnoPro technician will review it before approving your suggestion so it can be seen by the entire ClockWork community. If there are any issues with your suggestion, we will provide you with feedback on how it can be improved. You will receive an email when your suggestion is approved or denied.</p>
+            </div>
+        </div>
+        <Br>
+        <div class="center">
+            <button ng-click="beginSubmission()" class="btn btn-lg btn-info">Submit your Suggestion</button>
+        </div>
+    </div>
+</div>

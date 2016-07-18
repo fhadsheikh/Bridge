@@ -1,0 +1,27 @@
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sugg-suggestion-title">
+                                <a ng-click="openSuggestion(suggestion)">
+                                    {{suggestion.title}} <span ng-hide="suggestion.status == 1"><span class="label label-warning" style="font-weight:500">PENDING</span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sugg-suggestion-desc">Submitted by <strong>{{suggestion.name}}</strong><br>{{suggestion.submissiondate}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 right">
+                    <div class="sugg-suggestion-rating" ng-show="suggestion.status == 1">
+                        <span ng-show="suggestion.hasVoted"><i class="fa fa-check sugg-suggestion-rating-thumb"></i> {{suggestion.votes | number}}</span>
+                        <span ng-hide="suggestion.hasVoted"><i class="fa fa-thumbs-o-up sugg-suggestion-rating-thumb"></i> {{suggestion.votes | number}}</span>
+                    </div>
+                    <div class="sugg-suggestion-rating" ng-hide="suggestion.status == 1">
+                        <i class="fa fa-hourglass-2 sugg-suggestion-rating-thumb"></i>
+                    </div>
+                </div>
+            </div>

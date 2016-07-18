@@ -1,0 +1,116 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7 login-left" style="height:{{login.height}}px;overflow:hidden;color:white;padding:80px 40px 40px 40px;">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 style="text-shadow: 2px 2px #4c7b8c;font-family: 'Raleway', sans-serif;">Welcome to Suggestions</h1>
+
+                    <p style="font-size:12pt">This is the best way to let us know about features that you would like to see added into ClockWork. Vote for suggestions posted by other users like yourself or post your own.</p>
+                </div>
+            </div>
+
+            <div style="margin-top:80px;width:250px;position:absolute; bottom:40px; right: 40px; text-align:right">
+                <h3  style="font-family: 'Raleway', sans-serif;">Login Help</h3>
+
+                <p style="font-size:11pt">Log in using your Helpdesk account. Click here if you need to reset your password. If you don't have an account, please submit a ticket at http://clockworks.ca/support</p>
+            </div>
+        </div>
+        <div class="col-md-5 center">
+
+            <div class="cw-login-page">
+                <div class="cw-form">
+                    <div class="logo" style="padding-bottom:30px;"><a href=""><img src="http://clockworks.ca/images/clockworklogo3.png" height="80" alt="ClockWork Logo"></a></div>
+                    <div ng-show="login.alert" class="alert alert-danger">{{login.alert}}</div>
+                    <div ng-show="message" class="alert">{{login.message}}</div>
+                    
+                    <!-- SIGN UP FORM -->
+                    
+                    <form class="cw-register-form">
+                        <input type="text" id="firstname" placeholder="Firstname" ng-model="login.firstname"/>
+                        <input type="text" placeholder="Lastname" ng-model="login.lastname"/>
+                        <input type="text" placeholder="Email Address" ng-model="login.email"/>
+                        <input type="password" placeholder="Create Password" ng-model="login.password"/>
+                        <input type="text" placeholder="Title" ng-model="login.jobtitle"/>
+                        <input type="text" placeholder="Department" ng-model="login.department"/>
+                        <input type="text" placeholder="Institution" ng-model="login.institution"/>
+                        
+                        <button ng-click="login.signup()" style="width:100%">Sign Up</button>
+                    </form>
+                    
+                    <!-- LOG IN FORM -->
+                    
+                    <form name="userForm" class="cw-login-form" novalidate>
+                        <!--Username-->
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+                            <input type="text" name="username" class="form-control" ng-model="login.credentials.username" placeholder="Username" required autofocus>
+                            <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">Username is required.</p>
+                        </div>
+                        <!--Password-->
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                            <input type="password" name="password" class="form-control" ng-model="login.credentials.password" placeholder="Password" required>
+                            <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Password is required.</p>
+                        </div>
+                        
+
+                        <button ng-hide="login.busy" type="submit" ng-click="login.logIn(userForm)">Login</button>
+                        <button ng-hide="login.busy" type="submit" ng-click="login.startSignUp()">Register</button>
+
+                        <button ng-show="login.busy" style="width:100%">
+                            <i class="fa fa-spinner fa-pulse fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div id="copyright">
+                <p>&copy; TechnoPro Computer Solutions Inc.</p>
+            </div>
+
+            <div id="tproLogo">
+                <img  src="/images/technopro_logo.gif">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--
+<div class="header">
+    <div class="container">
+        <div class="row" style="margin-top:25px">
+            <div class="col-md-6">
+                <div class="logo"><a href=""><img src="http://clockworks.ca/images/clockworklogo3.png" height="80" alt="ClockWork Logo"></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container login stickyFooterDependancy" style="margin-top:40px">
+    <div class="cw-login-page">
+        <div class="cw-form">
+            <div ng-show="alert" class="alert alert-danger">{{login.alert}}</div>
+            <div ng-show="message" class="alert">{{login.message}}</div>
+            <form class="cw-register-form">
+                <input type="text" placeholder="Firstname" ng-model="login.firstname"/>
+                <input type="text" placeholder="Lastname" ng-model="login.lastname"/>
+                <input type="text" placeholder="Title" ng-model="login.title"/>
+                <input type="text" placeholder="Email Address" ng-model="login.email"/>
+                <button ng-click="signup()">Sign Up</button>
+            </form>
+            <form name="userForm" class="cw-login-form" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+                    <input type="text" name="username" class="form-control" ng-model="login.credentials.username" placeholder="Username" required>
+                    <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">Username is required.</p>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                    <input type="password" name="password" class="form-control" ng-model="login.credentials.password" placeholder="Password" required>
+                    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Password is required.</p>
+                </div>
+                <button type="submit" ng-click="logIn(userForm)">login</button>
+            </form>
+        </div>
+    </div>
+</div>
+-->

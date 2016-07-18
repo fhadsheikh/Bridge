@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Client</td>
+        <td>Tech</td>
+        <td>Admin</td>
+        <td>Credits</td>
+        <td>Actions</td>
+    </thead>
+    <tr ng-repeat="tech in manageTechs.techs">
+        <td>{{tech.id}}</td>
+        <td>{{tech.firstname}} {{tech.lastname}}</td>
+        <td><input type="checkbox" ng-model="tech.isClient"></td>
+        <td><input type="checkbox" ng-model="tech.isTech"></td>
+        <td><input type="checkbox" ng-model="tech.isAdmin"></td>
+        <td>{{tech.creditCount}}</td>
+        <td><a class="btn btn-sm btn-default"><i class="fa fa-trash"></i></a></td>
+    </tr>
+</table>

@@ -1,0 +1,73 @@
+<div class="sugg-single-header">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6 center">
+                    Submitted by <span style="sugg-single-submittedby">{{sugg.name}}</span>
+                </div>
+                <div class="col-md-3 right">
+                    <strong>{{sugg.votes}}</strong> votes
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sugg-single stickyFooterDependancy">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="sugg-single-title">
+                    <h1>{{sugg.title}}</h1>
+                </div>
+                <div class="sugg-single-menu">
+                    <!-- If someone from client school has voted -->
+                    <button ng-show="sugg.hasVoted" class="btn btn-info disabled">
+                        <i class="fa fa-thumbs-up"></i> Vote Submitted
+                    </button>
+                    <!-- If no one from client school has ever voted -->
+                    <button ng-hide="sugg.hasVoted" class="btn btn-info" ng-click="like(sugg.id)">
+                        <i class="fa fa-thumbs-up"></i> Vote
+                    </button>
+                    <a  class="btn btn-default" href="#">
+                        <i class="fa fa-ban"></i> Report
+                    </a>
+                </div>
+                <div class="sugg-single-body">
+                    <p ng-bind-html="sugg.summary"></p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default sugg-single-details">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Details</h3>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td>ID:</td>
+                            <td>{{sugg.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Votes:</td>
+                            <td>{{sugg.votes}}</td>
+                        </tr>
+                        <tr>
+                            <td>School:</td>
+                            <td>{{sugg.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>History:</td>
+                            <td ng-hide="sugg.hasVoted">No one from your school has voted for this suggestion</td>
+                            <td ng-show="sugg.hasVoted">{{sugg.hasVoted.firstname}} {{sugg.hasVoted.lastname}} from
+                        {{sugg.hasVoted.name}} voted for this feature on {{sugg.hasVoted.votedate}}</td>
+                        </tr>
+                    </table>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<messages ng-show="messages"></messages>

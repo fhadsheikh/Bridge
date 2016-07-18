@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>MyClockWork</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <base href="/">
+
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="../bower_components/sweetalert/dist/sweetalert.css" />
+        <link rel="stylesheet" href="../bower_components/summernote/dist/summernote.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="core/styles/main.css">
+        <!-- endbuild -->
+
+    </head>
+    <body ng-app="portal" ng-controller="MainCtrl as main">
+
+        <header ng-if="main.loggedin"></header>
+
+<!--        <div class="page" ng-view="" autoscroll="true"></div>-->
+        
+        <div ui-view></div>
+
+        <footer ng-if="main.loggedin"></footer>
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/angular-route/angular-route.js"></script>
+        <script src="../bower_components/angular-jwt/dist/angular-jwt.js"></script>
+        <script src="../bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+        <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="../bower_components/ngSweetAlert/SweetAlert.js"></script>
+        <script src="../bower_components/ng-timeago/ngtimeago.js"></script>
+        <script src="../bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+        <script src="../bower_components/summernote/dist/summernote.js"></script>
+        <script src="../bower_components/angular-summernote/dist/angular-summernote.js"></script>
+        <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js scripts/scripts.js -->
+        <script src="core/app.module.js"></script>
+        <script src="core/app.routes.js"></script>
+        <script src="core/app.run.js"></script>
+        <script src="core/components/login/login.ctrl.js"></script>
+        <script src="core/components/forbidden/forbidden.ctrl.js"></script>
+        <script src="core/components/not-found/notfound.ctrl.js"></script>
+        <script src="core/components/admin/admin.ctrl.js"></script>
+        <script src="core/components/admin/manage-users/manageUsers.ctrl.js"></script>
+        <script src="core/components/admin/manage-users/manageUsers.srv.js"></script>
+        <script src="core/components/admin/manage-techs/manageTechs.ctrl.js"></script>
+        <script src="core/components/admin/manage-techs/manageTechs.srv.js"></script>
+        <script src="core/components/admin/manage-schools/manageSchools.ctrl.js"></script>
+        <script src="core/components/admin/manage-schools/manageSchools.srv.js"></script>
+        <script src="core/components/admin/side-menu/sideMenu.drv.js"></script>
+        <script src="core/common/main/main.ctrl.js"></script>
+        <script src="core/common/header/header.drv.js"></script>
+        <script src="core/common/footer/footer.drv.js"></script>
+        <script src="core/common/search-bar/searchBar.drv.js"></script>
+        <script src="core/services/layout.srv.js"></script>
+        <script src="core/services/user.srv.js"></script>
+        <script src="core/services/auth-injector.srv.js"></script>
+        <script src="core/services/auth.srv.js"></script>
+        <script src="core/services/api.cnst.js"></script>
+        <script src="core/services/credit.srv.js"></script>
+        <script src="core/filters/toArray.fltr.js"></script>
+
+        <script src="suggestion-box/app.module.js"></script>
+        <script src="suggestion-box/app.routes.js"></script>
+        <script src="suggestion-box/components/suggestions/suggestions.ctrl.js"></script>
+        <script src="suggestion-box/components/suggestion/suggestion.ctrl.js"></script>
+        <script src="suggestion-box/components/suggestion-pending/suggestionPending.ctrl.js"></script>
+        <script src="suggestion-box/components/suggestion-pending/suggestionPending.srv.js"></script>
+        <script src="suggestion-box/common/messages/messages.drv.js"></script>
+        <script src="suggestion-box/components/suggestions/suggestions.srv.js"></script>
+        <script src="suggestion-box/components/suggestions/search-card/searchCard.drv.js"></script>
+        <script src="suggestion-box/components/suggestion-new/suggestionNew.ctrl.js"></script>
+        <script src="suggestion-box/components/moderate/moderate.ctrl.js"></script>
+        <script src="suggestion-box/components/moderate/moderate.srv.js"></script>
+        <script src="suggestion-box/components/moderate-suggestion/moderateSuggestion.ctrl.js"></script>
+        <script src="suggestion-box/components/moderate-suggestion/moderateSuggestion.srv.js"></script>
+        <script src="suggestion-box/common/footer-card/footerCard.drv.js"></script>
+        <!-- endbuild -->
+
+    </body>
+</html>

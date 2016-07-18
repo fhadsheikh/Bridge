@@ -1,0 +1,35 @@
+.messages{
+    background-color: #F1F1F1;
+    padding-top: 40px;
+    border-top: solid 1px #E0E0E0;
+}
+
+.messagebox{
+    margin: 0px 0px 80px 0px;
+}
+
+.messagebox button{
+    float: right;
+    margin-top: 10px;
+}
+
+.messages-list{
+    list-style: none;
+    padding:0px;
+}
+
+.message-list li{
+    
+}
+
+.message{
+    border: solid 1px #D6D6D6;
+    border-radius: 5px;
+    margin: 5px 0px 26px 0px;
+    padding: 20px 0px 10px 20px;
+    background-color: white;
+}
+
+.messagedate{
+    color:#969696;
+}

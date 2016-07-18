@@ -1,0 +1,31 @@
+<div>
+    <a class="btn btn-block btn-default" 
+       ng-class="{'active': admin.active == 'users'}" 
+       ng-click="admin.selectTab('users')" 
+       ui-sref="admin.manage-users"> 
+        
+        Manage Users
+        
+    </a>
+    
+    <a class="btn btn-block btn-default" 
+       ng-class="{'active': admin.active == 'techs'}" 
+       ng-click="admin.selectTab('techs')" 
+       ui-sref="admin.manage-techs"> 
+        
+        Manage Technicians
+        
+    </a>
+    
+    <a class="btn btn-block btn-default" 
+       ng-class="{'active': admin.active == 'schools'}" 
+       ng-click="admin.selectTab('schools')" 
+       ui-sref="admin.manage-schools"> 
+        
+        Manage Schools
+        
+    </a>
+    
+    <a class="btn btn-block btn-default">Settings</a>
+    <a class="btn btn-block btn-default">Advanced Settings</a>
+</div>
