@@ -9,6 +9,7 @@ angular
     var vm = this;
 
     vm.logIn = logIn;
+    vm.logInDigest = logInDigest;
     vm.signup = signup;
     vm.startSignUp = startSignUp;
     vm.busy = false;
@@ -75,6 +76,29 @@ angular
             })
         }
     };
+
+    function logInDigest(userForm){
+
+        console.log('logging in user');
+
+        // If field is prestine upon submission, make it invalid and inpristine
+        layout.validateEmptyFields([userForm.username, userForm.password]);
+
+        // Only continue with log in if form is valid (fields are filled out)
+        if(userForm.$valid){
+
+             vm.busy = true;
+
+            // Log them in
+            authSrv.loginDigest(vm.credentials.username, vm.credentials.password)
+            .catch(function(err){
+
+                
+                
+            })
+        }
+
+    }
         
     function startSignUp(){
         

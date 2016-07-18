@@ -11,7 +11,8 @@ angular
             checkAuth: checkAuth,
             isAllowed:isAllowed,
             login: login,
-            logout: logout
+            logout: logout,
+            loginDigest: loginDigest
 
         }
 
@@ -79,6 +80,27 @@ angular
             }, function(err){
                 deferred.reject(err);
                 return err;
+            });
+
+            return deferred.promise;
+
+        }
+
+        function loginDigest(username, password){
+
+            console.log('conecting to id provider');
+
+            var deferred = $q.defer();
+
+            $http.get(API.idProvider + 'issue')
+            .then(function(res){
+
+                console.log(res);
+
+            }, function(err){
+
+                console.log(err);
+
             });
 
             return deferred.promise;
